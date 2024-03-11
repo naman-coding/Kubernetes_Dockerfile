@@ -1,0 +1,20 @@
+ kind: Deployment 
+ apiVersion: apps/v1
+ metadata:
+  name: naman
+spec:
+  replicas: 2
+  selector: 
+    matchLabels:
+      app: naman
+    template:
+      metadata: 
+        labels:
+          app: naman
+      spec: 
+      containers:
+        - name: naman
+          image: namanhub/image_name
+          imagePullPolicy: Always
+          port:
+          - containerPort: 80
